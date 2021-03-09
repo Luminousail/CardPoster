@@ -1,45 +1,25 @@
 <template>
 <div class="left-sider">
   <div class="left-menu1">
-    <button class="sider-button">
-      <img class="icon" src="../../assets/icon/card.png">
-      <div>卡片</div>
-    
-    </button>
-    <button class="sider-button sider-button-white">
-      <img class="icon" src="../../assets/icon/picture.png">
-      <div>图片</div>
-    </button>
+    <button v-for="(item , index) in buttonList" :key="index" @click="button_clicked(index , item.path)" :class="index == index_selected? 'sider-button sider-button-white':'sider-button'">
 
-    <button class="sider-button">
-      <img class="icon" src="../../assets/icon/QRcode.png">
-      <div>二维码</div>
+      <img class="icon " :src="item.icon">
+      <div>{{item.name}}</div>
+
     </button>
+<!--    <button class="sider-button sider-button-white">-->
+<!--      <img class="icon" src="../../assets/icon/picture.png">-->
+<!--      <div>图片</div>-->
+<!--    </button>-->
+
+<!--    <button class="sider-button">-->
+<!--      <img class="icon" src="../../assets/icon/QRcode.png">-->
+<!--      <div>二维码</div>-->
+<!--    </button>-->
   </div>
   <div class="left-menu2">
 
-    <el-row style="margin-left: 8px">
-      <el-col :span="11">
-        <div class="grid-content bg-purple">
-          <img class="cardItem" src="../../assets/test/1.jpg">
-        </div>
-      </el-col>
-      <el-col :span="11">
-        <div class="grid-content bg-purple">
-          <img class="cardItem" src="../../assets/test/1.jpg">
-        </div>
-      </el-col>
-      <el-col :span="11">
-        <div class="grid-content bg-purple">
-          <img class="cardItem" src="../../assets/test/1.jpg">
-        </div>
-      </el-col>
-      <el-col :span="11">
-        <div class="grid-content bg-purple">
-          <img class="cardItem" src="../../assets/test/1.jpg">
-        </div>
-      </el-col>
-    </el-row>
+    <router-view></router-view>
 
 
   </div>
@@ -49,7 +29,26 @@
 
 <script>
 export default {
-  name: "sider"
+  name: "sider",
+  data(){
+    return {
+      index_selected:0,
+      buttonList:[
+        {name:"卡片",icon: require('../../assets/icon/card.png') , path:"/card"},
+        {name:"图片",icon: require('../../assets/icon/picture.png'), path:"/picture"},
+        {name:"二维码",icon: require('../../assets/icon/QRcode.png'), path:"/qrcode"},
+        // {name:"图片",icon:"../../assets/icon/card.png"},
+
+      ]
+    }
+
+  },
+  methods:{
+    button_clicked(index , path){
+      this.index_selected = index
+      this.$router.push(path);
+    }
+  }
 }
 </script>
 
@@ -92,7 +91,6 @@ export default {
   margin-top: 12px;
   width: 40px;
 }
-
 .cardItem{
   margin-top: 18px;
   margin-left: 24px;
@@ -110,6 +108,7 @@ export default {
 .sider-button-white{
   background: #ffffff;
 }
+
 :focus{
   outline: 0;
 }
