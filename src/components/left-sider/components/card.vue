@@ -1,6 +1,11 @@
 <template>
 <div>
-
+  <el-alert
+      title="选择卡片"
+      type="success"
+      description="您可以选择喜欢的卡片样式，来制作属于您自己的卡片海报"
+      :closable="false">
+  </el-alert>
   <el-row style="margin-left: 8px">
     <el-col :span="11">
       <div class="grid-content bg-purple">
