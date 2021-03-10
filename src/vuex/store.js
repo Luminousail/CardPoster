@@ -5,9 +5,14 @@ Vue.use(Vuex)
 
 const state = {
     count: 0,
-    background_card:""
+    background_card: require("../assets/test/2.jpg")
 }
 const mutations = {
+
+    mutationsSetBackground(state,img){
+        return (state.background_card = img)
+    },
+
     mutationsAddCount(state, n = 0) {
         return (state.count += n)
     },
