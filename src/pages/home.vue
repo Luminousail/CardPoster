@@ -19,6 +19,7 @@
 import vHeader from "@/components/header";
 import vsider from "@/components/left-sider/sider";
 import vContent from "@/components/content";
+
 export default {
   name: "首页",
 
