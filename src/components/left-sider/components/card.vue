@@ -9,12 +9,13 @@
   <el-row style="margin-left: 8px">
     <el-col :span="11">
       <div class="grid-content bg-purple">
-        <img class="cardItem" src="../../../assets/test/1.jpg">
+        <img class="cardItem" @click="handleAddClick(1)" src="../../../assets/test/1.jpg">
+        <h3>{{$store.state.count}}</h3>
       </div>
     </el-col>
     <el-col :span="11">
       <div class="grid-content bg-purple">
-        <img class="cardItem" src="../../../assets/test/1.jpg">
+        <img class="cardItem" @click="handleReduceClick(1)" src="../../../assets/test/1.jpg">
       </div>
     </el-col>
     <el-col :span="11">
@@ -34,7 +35,19 @@
 
 <script>
 export default {
-  name: "card"
+  name: "card",
+  methods:{
+    card_clicked(index , path){
+      this.index_selected = index
+      this.$router.push(path);
+    },
+    handleAddClick(n){
+      this.$store.commit('mutationsAddCount',n);
+    },
+    handleReduceClick(n){
+      this.$store.commit('mutationsReduceCount',n);
+    }
+  }
 }
 </script>
 
