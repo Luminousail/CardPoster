@@ -12,10 +12,10 @@
           type="textarea"
           autosize
           placeholder="请输入URL地址"
-          v-model="textarea1">
+          v-model="url">
       </el-input>
 
-      <el-button type="primary" style="margin-top: 18px"   >生成二维码</el-button>
+      <el-button type="primary" style="margin-top: 18px" @click="handleSetUrl(url)"  >生成二维码</el-button>
 
 
     </div>
@@ -26,7 +26,17 @@
 
 <script>
 export default {
-  name: "qrcode"
+  name: "qrcode",
+  data(){
+    return{
+      url:""
+    }
+  },
+  methods:{
+    handleSetUrl(url){
+      this.$store.commit('mutationsSetQRtext',url);
+    }
+  }
 }
 </script>
 

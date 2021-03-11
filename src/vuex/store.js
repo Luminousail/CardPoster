@@ -5,12 +5,17 @@ Vue.use(Vuex)
 
 const state = {
     count: 0,
+    text_QR:"",
     background_card: require("../assets/test/2.jpg")
 }
 const mutations = {
 
     mutationsSetBackground(state,img){
         return (state.background_card = img)
+    },
+
+    mutationsSetQRtext(state,text){
+        return (state.text_QR = text)
     },
 
     mutationsAddCount(state, n = 0) {

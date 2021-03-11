@@ -1,0 +1,13 @@
+@font-face {
+    font-family: '方正兰亭中粗黑test';
+    src:url('方正兰亭中粗黑_GBK.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SourceHanSansCN';
+    src:url('bb4171.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
