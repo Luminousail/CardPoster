@@ -24,7 +24,7 @@
       </div>
 
       <div class="card-foot" @click="downloadCard()">
-      CardPoster
+      - CardPoster -
 
 
       </div>
@@ -220,6 +220,7 @@ export default {
   font-family: 江城圆体;
   color: #e2e2e2;
   margin-top: 12px;
+  font-size: 6px;
 
 }
 </style>

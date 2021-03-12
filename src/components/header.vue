@@ -27,7 +27,7 @@
         <!--<img src="../../assets/img/img.png" />-->
         <!--</div>-->
         <!-- 用户名下拉菜单 -->
-      <el-button type="primary" round @click="clickdownbutton">Download</el-button>
+      <el-button type="primary" round @click="clickdownbutton">{{buttonText}}</el-button>
       </div>
     </div>
   </div>
@@ -38,6 +38,11 @@ import html2canvas from 'html2canvas';
 import domtoimage from 'dom-to-image';
 export default {
   name: "header",
+  data(){
+    return{
+      buttonText:"下载卡片"
+    }
+  },
   methods:{
 
     clickdownbutton(){
@@ -53,14 +58,15 @@ export default {
 
 
     downLoadDom(){
-
-
+      var that = this
+      this.buttonText = "生成中..."
       domtoimage.toJpeg(document.getElementById('poster'), { quality: 1,width:370,height:600, scale:2})
           .then(function (dataUrl) {
             var link = document.createElement('a');
-            link.download = 'my-image-name.jpeg';
+            link.download = 'CardPoster.jpg';
             link.href = dataUrl;
             link.click();
+            that.buttonText = "下载卡片"
           });
     },
     //文件下载方法
