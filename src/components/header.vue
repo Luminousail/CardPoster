@@ -27,15 +27,76 @@
         <!--<img src="../../assets/img/img.png" />-->
         <!--</div>-->
         <!-- 用户名下拉菜单 -->
-      <el-button type="primary" round>Download</el-button>
+      <el-button type="primary" round @click="clickdownbutton">Download</el-button>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import html2canvas from 'html2canvas';
+import domtoimage from 'dom-to-image';
 export default {
-  name: "header"
+  name: "header",
+  methods:{
+
+    clickdownbutton(){
+      var userAgent = navigator.userAgent; //取得浏览器的userAgent字符串
+      console.log(userAgent)
+      if (userAgent.indexOf("Safari") > 0 && userAgent.indexOf("Chrome") < 0) {//判断是否Safari浏览器
+        console.log("Safari")
+        this.downloadCard()
+      }else {
+        this.downLoadDom()
+      }
+    },
+
+
+    downLoadDom(){
+
+
+      domtoimage.toJpeg(document.getElementById('poster'), { quality: 1,width:370,height:600, scale:2})
+          .then(function (dataUrl) {
+            var link = document.createElement('a');
+            link.download = 'my-image-name.jpeg';
+            link.href = dataUrl;
+            link.click();
+          });
+    },
+    //文件下载方法
+    downLoadFile(fileName, canvasImg) {
+      //创建一个a标签
+      var a = document.createElement('a')
+      //指定下载文件名称
+      a.href = canvasImg;
+      a.download = fileName
+      //a 标签 需要点击触发。所以强制给他分派一个点击事件
+      //创建一个鼠标事件
+      let event = document.createEvent("MouseEvents")
+      // 初始化鼠标事件
+      event.initMouseEvent("click", true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null)
+      // 指定元素对象触发事件
+      a.dispatchEvent(event)
+    },
+
+    //下载虚拟卡券方法
+    downloadCard(){
+      let poster = document.getElementById('poster')
+      html2canvas(poster, {
+        scale: 2 || window.devicePixelRatio,
+        dpi:600,
+        useCORS: true,
+        width: 370,
+        height: 600,
+
+      }).then(canvas => {
+        let canvasImg = canvas.toDataURL("image/png")
+        // console.log(this.posterDataUrl)
+        this.downLoadFile("CardPoster", canvasImg);
+      });
+    },
+
+  }
 }
 </script>
 

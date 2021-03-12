@@ -10,7 +10,9 @@
   "dependencies": {
     "bootstrap": "^3.4.1",
     "core-js": "^3.6.5",
+    "dom-to-image": "^2.6.0",
     "element-ui": "^2.4.5",
+    "html2canvas": "^1.0.0-rc.5",
     "vue": "^2.6.11",
     "vue-qr": "^2.3.0",
     "vue-router": "^3.2.0",
