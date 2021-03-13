@@ -26,6 +26,11 @@ const routes = [
         component: () => import(/* webpackChunkName: "about" */ '../components/left-sider/components/picture.vue')
       },
       {
+        path: 'text',
+        name: 'text',
+        component: () => import(/* webpackChunkName: "about" */ '../components/left-sider/components/text.vue')
+      },
+      {
         path: 'qrcode',
         name: 'qrcode',
         component: () => import(/* webpackChunkName: "about" */ '../components/left-sider/components/qrcode.vue')

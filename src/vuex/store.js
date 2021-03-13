@@ -8,7 +8,14 @@ const state = {
     uploadImage:"",
     count: 0,
     text_QR:"",
-    background_card: require("../assets/test/2.jpg")
+    background_card: require("../assets/test/2.jpg"),
+
+    cardtextform:{
+        cardtittle:"",
+        cardsubtittle:"",
+        infotittle:"",
+        infosubtittle:"",
+    }
 }
 const mutations = {
 
@@ -28,6 +35,10 @@ const mutations = {
     ChangeCropperVisible(state,visible){
 
         return (state.CropperVisible = visible)
+    },
+
+    SetCardTextForm(state,form){
+        return (state.cardtextform = form)
     },
 
     mutationsAddCount(state, n = 0) {

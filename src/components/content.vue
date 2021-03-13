@@ -7,16 +7,16 @@
         <img class="cardimg" :src='$store.state.background_card'>
 
         <div class="cardimg-info">
-          <div class="cardimg-tittle">Windows 10X延期发布，微软这次做系统能学乖吗？</div>
-          <div class="cardimg-subtittle">这两款新品都是主打双屏概念，只不过Surface Duo采用的是系统......</div>
+          <div class="cardimg-tittle">{{this.$store.state.cardtextform.cardtittle}}</div>
+          <div class="cardimg-subtittle">{{this.$store.state.cardtextform.cardsubtittle}}</div>
         </div>
 
       </div>
 
       <div class="card-infomation">
         <div class="card-infomation-tittle">
-          <div class="infomation-tittle">麓思实验室</div>
-          <div class="infomation-subtittle">技术让生活更有趣</div>
+          <div class="infomation-tittle">{{this.$store.state.cardtextform.infotittle}}</div>
+          <div class="infomation-subtittle">{{this.$store.state.cardtextform.infosubtittle}}</div>
 
         </div>
 

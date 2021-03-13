@@ -23,7 +23,7 @@
     </div>
   </div>
   <div slot="footer" class="dialog-footer">
-    <el-button @click="dialogVisible = false">取 消</el-button>
+<!--    <el-button @click="this.$store.state.CropperVisible = false">取 消</el-button>-->
     <el-button type="primary" @click="cropperFinish" >确认</el-button>
   </div>
 
@@ -106,7 +106,8 @@ export default {
           this.$emit('cropperFinish', file, data);
           this.$store.state.uploadImage = data
           this.$store.state.background_card = data
-          console.log(file)
+          this.$store.state.CropperVisible = false
+          // console.log(file)
         });
       }
 
@@ -125,6 +126,7 @@ export default {
       }
       return new Blob([ab], { type: 'image/jpeg' });
     },
+
 
   },
 }

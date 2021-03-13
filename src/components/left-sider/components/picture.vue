@@ -53,8 +53,6 @@ export default {
       }
       this.fileinfo = file
       console.log(URL.createObjectURL(file.raw))
-      // this.$store.commit('SetUploadImage',URL.createObjectURL(file.raw));
-      // this.$store.commit('ChangeCropperVisible',true);
       // 上传成功后将图片地址赋值给裁剪框显示图片
       this.$nextTick(() => {
         // this.option.img = file.url
