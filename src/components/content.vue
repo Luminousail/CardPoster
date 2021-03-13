@@ -3,6 +3,7 @@
   <div class="content" >
     <div  id="poster" class="card">
       <div class="card-group">
+<!--        <img class="cardimg" :src='$store.state.background_card'>-->
         <img class="cardimg" :src='$store.state.background_card'>
 
         <div class="cardimg-info">

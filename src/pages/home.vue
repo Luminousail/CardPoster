@@ -3,6 +3,22 @@
     <vHeader></vHeader>
     <vsider class="sider"></vsider>
     <v-content class="content" :style="defaultHeight"></v-content>
+    <el-dialog
+        title="图片裁剪"
+        :visible.sync="$store.state.CropperVisible"
+        width="30%"
+       >
+
+      <CropperImage></CropperImage>
+
+
+
+      <span slot="footer" class="dialog-footer">
+<!--    <el-button @click="dialogVisible = false">取 消</el-button>-->
+<!--    <el-button type="primary" @click="dialogVisible = false">确 定</el-button>-->
+  </span>
+    </el-dialog>
+
   </div>
 <!--  <el-container>-->
 <!--    <el-header>Header</el-header>-->
@@ -19,16 +35,21 @@
 import vHeader from "@/components/header";
 import vsider from "@/components/left-sider/sider";
 import vContent from "@/components/content";
+import CropperImage from "@/components/CropperImage"
 
 export default {
-  name: "首页",
+  name: "",
 
   data() {
     return {
+
       defaultHeight: {
         height: "",
-        width:""
-      }
+        width:"",
+
+      },
+
+
     };
   },
   methods: {
@@ -46,7 +67,8 @@ export default {
   components: {
     vHeader,
     vsider,
-    vContent
+    vContent,
+    CropperImage
   }
 }
 </script>
@@ -54,10 +76,21 @@ export default {
 <style scoped>
 .sider{
   position: fixed;
-z-index: 999999;
+z-index: 100;
 }
 .content{
   /*margin-left: 500px;*/
   /*margin-top: 200px;*/
 }
+
+.avatar-uploader{
+  background:red!important;
+  width:150px;height:150px;
+  text-align: center;
+  line-height: 150px;
+}
+.el-icon-plus{
+  width:150px;height:150px;font-size:30px;
+}
+
 </style>

@@ -4,6 +4,8 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 const state = {
+    CropperVisible : false,
+    uploadImage:"",
     count: 0,
     text_QR:"",
     background_card: require("../assets/test/2.jpg")
@@ -16,6 +18,16 @@ const mutations = {
 
     mutationsSetQRtext(state,text){
         return (state.text_QR = text)
+    },
+
+    SetUploadImage(state,url){
+        console.log("url:"+url)
+        return (state.uploadImage = url)
+    },
+
+    ChangeCropperVisible(state,visible){
+
+        return (state.CropperVisible = visible)
     },
 
     mutationsAddCount(state, n = 0) {
