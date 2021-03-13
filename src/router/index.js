@@ -35,6 +35,11 @@ const routes = [
         name: 'qrcode',
         component: () => import(/* webpackChunkName: "about" */ '../components/left-sider/components/qrcode.vue')
       },
+      {
+        path: 'log',
+        name: 'log',
+        component: () => import(/* webpackChunkName: "about" */ '../components/left-sider/components/log.vue')
+      },
     ]
 
   },

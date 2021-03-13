@@ -13,8 +13,8 @@ const state = {
     cardtextform:{
         cardtittle:"",
         cardsubtittle:"",
-        infotittle:"",
-        infosubtittle:"",
+        infotittle:"麓思实验室",
+        infosubtittle:"技术让生活更有趣",
     }
 }
 const mutations = {

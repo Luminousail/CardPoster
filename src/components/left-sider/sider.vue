@@ -38,6 +38,7 @@ export default {
         {name:"图片",icon: require('../../assets/icon/picture.png'), path:"/picture"},
         {name:"文字",icon: require('../../assets/icon/text.png'), path:"/text"},
         {name:"二维码",icon: require('../../assets/icon/QRcode.png'), path:"/qrcode"},
+        {name:"日志",icon: require('../../assets/icon/log.png'), path:"/log"},
         // {name:"图片",icon:"../../assets/icon/card.png"},
 
       ]
