@@ -40,6 +40,17 @@ const routes = [
         name: 'log',
         component: () => import(/* webpackChunkName: "about" */ '../components/left-sider/components/log.vue')
       },
+      {
+        path: 'about',
+        name: 'about',
+        component: () => import(/* webpackChunkName: "about" */ '../components/left-sider/components/about.vue')
+      },
+
+      {
+        path: 'donate',
+        name: 'donate',
+        component: () => import(/* webpackChunkName: "about" */ '../components/left-sider/components/donate.vue')
+      },
     ]
 
   },
