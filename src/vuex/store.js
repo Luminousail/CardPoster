@@ -4,11 +4,12 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 const state = {
+    Model:0,
     CropperVisible : false,
     uploadImage:"",
     count: 0,
     text_QR:"",
-    background_card: require("../assets/test/2.jpg"),
+    background_card: require("../assets/cover/cover1.jpg"),
 
     cardtextform:{
         cardtittle:"",
@@ -18,6 +19,10 @@ const state = {
     }
 }
 const mutations = {
+
+    SetCardModel(state,model){
+        return (state.Model = model)
+    },
 
     mutationsSetBackground(state,img){
         return (state.background_card = img)

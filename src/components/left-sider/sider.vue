@@ -99,6 +99,7 @@ export default {
   margin-top: 18px;
   margin-left: 24px;
   height: 180px;
+
 }
 
 .sider-button{

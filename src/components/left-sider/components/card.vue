@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="cardroot">
   <el-alert
       title="选择卡片"
       type="success"
@@ -8,8 +8,8 @@
   </el-alert>
   <el-row style="margin-left: 8px">
     <el-col :span="11" v-for="(item , index) in cardList" :key="index">
-      <div class="grid-content bg-purple">
-        <img class="cardItem" @click="handleSetCard(item.img)" :src="item.img">
+      <div class="grid-content bg-purple imgborder" >
+        <img class="cardItem" @click="handleSetCard(item.model)" :src="item.img">
 <!--        <h3>{{$store.state.count}}</h3>-->
 
       </div>
@@ -26,10 +26,10 @@ export default {
   data(){
     return{
       cardList:[
-        {img:require("../../../assets/test/1.jpg")},
-        {img:require("../../../assets/test/2.jpg")},
-        {img:require("../../../assets/test/3.jpg")},
-        {img:require("../../../assets/test/4.jpg")},
+        {img:require("../../../assets/model/model1.jpg"),model:1},
+        // {img:require("../../../assets/test/2.jpg")},
+        // {img:require("../../../assets/test/3.jpg")},
+        // {img:require("../../../assets/test/4.jpg")},
       ]
     }
   },
@@ -39,8 +39,9 @@ export default {
       this.$router.push(path);
     },
 
-    handleSetCard(img){
-      this.$store.commit('mutationsSetBackground',img);
+    handleSetCard(model){
+      // this.$store.commit('mutationsSetBackground',img);
+      this.$store.commit('SetCardModel',model);
 
 
     },
@@ -56,10 +57,16 @@ export default {
 </script>
 
 <style scoped>
+/*.cardroot{*/
+/*  background: #deedff;*/
+/*}*/
+
 .cardItem{
   margin-top: 18px;
   margin-left: 24px;
   height: 180px;
+  box-shadow:5px 5px  7px 1px #a5a5a5;
+
 }
 
 .sider-button{
@@ -72,5 +79,10 @@ export default {
 }
 .sider-button-white{
   background: #ffffff;
+}
+
+.imgborder{
+  border: 5px;
+  border-color: #63646a;
 }
 </style>

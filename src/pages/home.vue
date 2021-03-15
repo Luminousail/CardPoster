@@ -2,7 +2,9 @@
   <div>
     <vHeader></vHeader>
     <vsider class="sider"></vsider>
-    <v-content class="content" :style="defaultHeight"></v-content>
+<!--    <v-content class="content" :style="defaultHeight"></v-content>-->
+    <Model0 v-if="$store.state.Model==0" class="content" :style="defaultHeight"></Model0>
+    <Model1 v-if="$store.state.Model==1" class="content" :style="defaultHeight"></Model1>
     <el-dialog
         title="图片裁剪"
         :visible.sync="$store.state.CropperVisible"
@@ -34,8 +36,12 @@
 // import Header from '../components/header';
 import vHeader from "@/components/header";
 import vsider from "@/components/left-sider/sider";
-import vContent from "@/components/content";
-import CropperImage from "@/components/CropperImage"
+// import vContent from "@/components/content";
+import CropperImage from "@/components/CropperImage";
+
+import Model0 from "@/components/model/model0";
+import Model1 from "@/components/model/model1";
+
 
 export default {
   name: "",
@@ -65,9 +71,12 @@ export default {
     this.getHeight();
   },
   components: {
+    Model0,
+    Model1,
     vHeader,
     vsider,
-    vContent,
+    // vContent,
+
     CropperImage
   }
 }
