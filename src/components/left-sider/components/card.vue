@@ -3,11 +3,11 @@
   <el-alert
       title="选择卡片"
       type="success"
-      description="您可以选择喜欢的卡片样式，来制作属于您自己的卡片海报"
+      description="您可以选择喜欢的卡片样式，来制作属于您自己的卡片海报，若下载后发现样式错误，建议使用谷歌浏览器："
       :closable="false">
   </el-alert>
-  <el-row style="margin-left: 8px">
-    <el-col :span="11" v-for="(item , index) in cardList" :key="index">
+  <el-row style="margin-left: 0px">
+    <el-col :span="12" v-for="(item , index) in cardList" :key="index">
       <div class="grid-content bg-purple imgborder" >
         <img class="cardItem" @click="handleSetCard(item.model)" :src="item.img">
 <!--        <h3>{{$store.state.count}}</h3>-->
@@ -27,6 +27,7 @@ export default {
     return{
       cardList:[
         {img:require("../../../assets/model/model1.jpg"),model:1},
+        {img:require("../../../assets/model/model2.png"),model:2},
         // {img:require("../../../assets/test/2.jpg")},
         // {img:require("../../../assets/test/3.jpg")},
         // {img:require("../../../assets/test/4.jpg")},
@@ -63,7 +64,7 @@ export default {
 
 .cardItem{
   margin-top: 18px;
-  margin-left: 24px;
+  margin-left: 14px;
   height: 180px;
   box-shadow:5px 5px  7px 1px #a5a5a5;
 

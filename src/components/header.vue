@@ -52,7 +52,8 @@ export default {
         console.log("Safari")
         this.downloadCard()
       }else {
-        this.downLoadDom()
+        // this.downLoadDom()
+        this.downLoadDomPng()
       }
     },
 
@@ -69,6 +70,23 @@ export default {
             that.buttonText = "下载卡片"
           });
     },
+    downLoadDomPng(){
+      var that = this
+      this.buttonText = "生成中..."
+      domtoimage.toPng(document.getElementById('poster'), { quality: 0.5,width:370,height:600, scale:2})
+          .then(function (dataUrl) {
+            var link = document.createElement('a');
+            link.download = 'CardPoster.png';
+            link.href = dataUrl;
+            link.click();
+            that.buttonText = "下载卡片"
+          });
+
+
+
+    },
+
+
     //文件下载方法
     downLoadFile(fileName, canvasImg) {
       //创建一个a标签

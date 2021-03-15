@@ -11,24 +11,43 @@
           <div class="cardimg-subtittle">{{this.$store.state.cardtextform.cardsubtittle}}</div>
         </div>
 
-      </div>
 
-      <div class="card-infomation">
-        <div class="card-infomation-tittle">
-          <div class="infomation-tittle">{{this.$store.state.cardtextform.infotittle}}</div>
-          <div class="infomation-subtittle">{{this.$store.state.cardtextform.infosubtittle}}</div>
+        <div class="bottominfo">
 
+          <div class="card-infomation">
+            <div class="card-infomation-tittle">
+              <div class="infomation-tittle">{{this.$store.state.cardtextform.infotittle}}</div>
+              <div class="infomation-subtittle">{{this.$store.state.cardtextform.infosubtittle}}</div>
+
+            </div>
+
+            <vue-qr v-if="$store.state.text_QR != ''" class="qrcode"  :text="$store.state.text_QR" :size="80" :margin="6"></vue-qr>
+
+          </div>
+          <div class="card-foot" >
+            CardPoster
+          </div>
         </div>
 
-        <vue-qr v-if="$store.state.text_QR != ''" class="qrcode"  :text="$store.state.text_QR" :size="80" :margin="6"></vue-qr>
+
+
 
       </div>
 
-      <div class="card-foot" @click="downloadCard()">
-      - CardPoster -
+<!--      <div class="card-infomation">-->
+<!--        <div class="card-infomation-tittle">-->
+<!--          <div class="infomation-tittle">{{this.$store.state.cardtextform.infotittle}}</div>-->
+<!--          <div class="infomation-subtittle">{{this.$store.state.cardtextform.infosubtittle}}</div>-->
 
+<!--        </div>-->
 
-      </div>
+<!--        <vue-qr v-if="$store.state.text_QR != ''" class="qrcode"  :text="$store.state.text_QR" :size="80" :margin="6"></vue-qr>-->
+
+<!--      </div>-->
+
+<!--      <div class="card-foot" >-->
+<!--      - CardPoster - -->
+<!--      </div>-->
 
     </div>
 
@@ -126,24 +145,27 @@ export default {
   display: flex;
   display: inline-flex;
   flex-direction : column;
-  background: white;
+  /*background: #ffffff;*/
+  background-color: rgba(255,255,255,0.15);
   height: 600px;
   width: 370px;
   align-items:center;
   /*justify-content:center;*/
+  border-radius:15px;
 }
 .card-group{
   position: relative;
   width: 100%;
-  margin-top: 18px;
+  height: 100%;
+  /*margin-top: 18px;*/
 
 }
 .cardimg{
 
-  width: 82%;
-  height: 420px;
-  border-radius:15px;
-  box-shadow:6px 6px  7px 3px #a5a5a5;
+  width: 100%;
+  height: 100%;
+  /*border-radius:15px;*/
+  /*box-shadow:6px 6px  7px 3px #a5a5a5;*/
   /*display: inline-block;*/
   /*box-shadow:4px 4px  10px  #050505;*/
   /*-webkit-box-shadow:4px 4px  10px  #050505;*/
@@ -158,8 +180,8 @@ export default {
 
 .cardimg-info{
   position: absolute;/*重要*/ /*子类绝对布局必填*/
-
-  margin-top: 280px;
+  width: 80%;
+  margin-top: 70px;
   margin-left: 48px;
   margin-right: 48px;
 }
@@ -167,14 +189,14 @@ export default {
 .cardimg-tittle{
   font-family: SourceHanSansCN;
   color: white;
-  font-size: 20px;
-  text-shadow:2px 2px 2px #afafaf;
+  font-size: 50px;
+  /*text-shadow:2px 2px 2px #afafaf;*/
   letter-spacing: 1px;
 }
 .cardimg-subtittle{
   font-family: 江城圆体;
   margin-top: 12px;
-  font-size: 14px;
+  font-size: 18px;
   color: white;
   text-shadow:1px 1px 2px #686868;
 
@@ -184,16 +206,25 @@ export default {
 }
 
 .qrcode{
+  height: 50%;
   margin-right: 36px;
   margin-left: auto;
 }
 
 .card-infomation{
-  margin-top: 448px;
-  width: 100%;
+  background: white;
+  position: absolute;/*重要*/ /*子类绝对布局必填*/
+  width: 90%;
+  height: 120px;
+  margin-top: 420px;
+  /*margin-top: 448px;*/
+
   display: flex;
   display: inline-flex;
   flex-direction : row;
+  border-radius:15px;
+  align-items:center;
+  /*justify-content:center;*/
 
 }
 .card-infomation-tittle{
@@ -218,10 +249,26 @@ export default {
 }
 
 .card-foot{
+  position: absolute;/*重要*/ /*子类绝对布局必填*/
   font-family: 江城圆体;
-  color: #e2e2e2;
-  margin-top: 12px;
-  font-size: 12px;
+  color: #ffffff;
+  font-size: 14px;
+  margin-top: 550px;
+  margin-left:132px;
 
+}
+
+.bottominfo{
+  /*margin-left: 48px;*/
+  margin-left: 20px;
+  display: flex;
+  display: inline-flex;
+  flex-direction : row;
+  background: white;
+  /*height: 600px;*/
+  /*width: 370px;*/
+  /*align-items:center;*/
+  /*justify-content:center;*/
+  /*border-radius:15px;*/
 }
 </style>
