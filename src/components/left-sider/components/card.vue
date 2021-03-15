@@ -3,7 +3,7 @@
   <el-alert
       title="选择卡片"
       type="success"
-      description="您可以选择喜欢的卡片样式，来制作属于您自己的卡片海报，若下载后发现样式错误，建议使用谷歌浏览器："
+      description="您可以选择喜欢的卡片样式，来制作属于您自己的卡片海报，若下载后发现样式错误，建议使用谷歌浏览器"
       :closable="false">
   </el-alert>
   <el-row style="margin-left: 0px">

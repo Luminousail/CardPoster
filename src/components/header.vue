@@ -143,6 +143,8 @@ export default {
   line-height: 70px;
 }
 .header .logo {
+  font-size: 28px;
+  font-family: SourceHanSansCN;
   float: left;
   margin-left: 24px;
   width: 550px;

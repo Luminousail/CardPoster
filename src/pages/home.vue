@@ -46,7 +46,7 @@ import Model2 from "@/components/model/model2";
 
 
 export default {
-  name: "",
+  name: "CardPoster",
 
   data() {
     return {
