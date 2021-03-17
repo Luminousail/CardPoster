@@ -6,8 +6,11 @@
         description="如果您喜欢我所开发的应用，欢迎进行爱心捐助，所获得的所有收益将用于服务器维护与新功能的开发"
         :closable="false">
     </el-alert>
-
+    <img src="../../../../src/assets/picture/WeChatPay.jpg" style="width: 180px;margin-top: 30px">
+    <div style="color: #02bb02">微信</div>
     <img src="../../../../src/assets/picture/paycode.jpg" style="width: 180px;margin-top: 30px">
+    <div>支付宝</div>
+
 
 </div>
 </template>

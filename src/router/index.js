@@ -70,6 +70,7 @@ const routes = [
 ]
 
 const router = new VueRouter({
+  base: '/CardPoster',
   routes
 })
 

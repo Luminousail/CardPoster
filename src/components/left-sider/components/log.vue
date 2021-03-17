@@ -8,7 +8,12 @@
     </el-alert>
     <el-scrollbar style="width: 100%;height: 86%">
     <el-timeline style="margin-top: 8px;margin-left: -28px">
-
+      <el-timeline-item timestamp="2021/03/15" placement="top">
+        <el-card>
+          <h4>v1.0.0</h4>
+          <p>CardPoster上线，提供两种卡片样式</p>
+        </el-card>
+      </el-timeline-item>
       <el-timeline-item timestamp="2021/03/08" placement="top">
         <el-card>
           <h4>v0.0.0</h4>
