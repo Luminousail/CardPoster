@@ -63,6 +63,22 @@ import html2canvas from 'html2canvas';
 import domtoimage from 'dom-to-image';
 export default {
   name: "content",
+  filters: {
+    Tittle_ellipsis (value) {
+      if (!value) return ''
+      if (value.length > 25) {
+        return value.slice(0,25) + '...'
+      }
+      return value
+    },
+    SubTittle_ellipsis (value) {
+      if (!value) return ''
+      if (value.length > 50) {
+        return value.slice(0,50) + '...'
+      }
+      return value
+    }
+  },
   data(){
     return{
 

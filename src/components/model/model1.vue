@@ -1,21 +1,26 @@
 <script src="../../node_modules/html2canvas/dist/html2canvas.js"></script>
 <template>
   <div class="content" >
+
     <div  id="poster" class="card">
       <div class="card-group">
 <!--        <img class="cardimg" :src='$store.state.background_card'>-->
         <img class="cardimg" :src='$store.state.background_card'>
 
-        <div class="cardimg-info">
-          <div class="cardimg-tittle">{{this.$store.state.cardtextform.cardtittle}}</div>
-          <div class="cardimg-subtittle">{{this.$store.state.cardtextform.cardsubtittle}}</div>
+        <div  class="cardimg-info">
+          <div class="cardimg-tittle">{{this.$store.state.cardtextform.cardtittle | Tittle_ellipsis}}</div>
+          <div class="cardimg-subtittle">{{this.$store.state.cardtextform.cardsubtittle | SubTittle_ellipsis}}</div>
         </div>
 
       </div>
 
       <div class="card-infomation">
         <div class="card-infomation-tittle">
-          <div class="infomation-tittle">{{this.$store.state.cardtextform.infotittle}}</div>
+
+            <div class="infomation-tittle">{{this.$store.state.cardtextform.infotittle}}</div>
+
+
+
           <div class="infomation-subtittle">{{this.$store.state.cardtextform.infosubtittle}}</div>
 
         </div>
@@ -44,6 +49,23 @@ import html2canvas from 'html2canvas';
 import domtoimage from 'dom-to-image';
 export default {
   name: "content",
+  filters: {
+    Tittle_ellipsis (value) {
+      if (!value) return ''
+      if (value.length > 25) {
+        return value.slice(0,25) + '...'
+      }
+      return value
+    },
+    SubTittle_ellipsis (value) {
+      if (!value) return ''
+      if (value.length > 50) {
+        return value.slice(0,50) + '...'
+      }
+      return value
+    }
+  },
+
   data(){
     return{
 
@@ -54,8 +76,41 @@ export default {
 
   },
 
+  directives: {
+    drag(el){
+      // console.log(el)
+      let oDiv = el; //当前元素
+      let self = this; //上下文
+      //禁止选择网页上的文字
+      document.onselectstart = function() {
+        return false;
+      };
+      oDiv.onmousedown = function(e){
+        //鼠标按下，计算当前元素距离可视区的距离
+        let disX = e.clientX - oDiv.offsetLeft;
+        let disY = e.clientY - oDiv.offsetTop;
+        document.onmousemove = function(e){
+          //通过事件委托，计算移动的距离
+          let l = e.clientX - disX;
+          let t = e.clientY - disY;
+          //移动当前元素
+          oDiv.style.left = l + "px";
+          oDiv.style.top = t + "px";
+        }
+        document.onmouseup = function(e){
+          document.onmousemove = null;
+          document.onmouseup = null;
+        };
+        //return false不加的话可能导致黏连，就是拖到一个地方时div粘在鼠标上不下来，相当于onmouseup失效
+        return false;
+      };
+    }},
+
+
 
   methods: {
+
+
 
     downLoadDom(){
 
@@ -123,6 +178,7 @@ export default {
   justify-content:center;;
 }
 .card{
+  /*position: relative;*/
   display: flex;
   display: inline-flex;
   flex-direction : column;
@@ -158,13 +214,15 @@ export default {
 
 .cardimg-info{
   position: absolute;/*重要*/ /*子类绝对布局必填*/
-
+  width: 75%;
   margin-top: 280px;
   margin-left: 48px;
   margin-right: 48px;
 }
 
 .cardimg-tittle{
+  width: 100%;
+  /*position: absolute;!*重要*! !*子类绝对布局必填*!*/
   font-family: SourceHanSansCN;
   color: white;
   font-size: 20px;
@@ -172,6 +230,8 @@ export default {
   letter-spacing: 1px;
 }
 .cardimg-subtittle{
+  margin-top: 18px;
+  /*position: absolute;!*重要*! !*子类绝对布局必填*!*/
   font-family: 江城圆体;
   margin-top: 12px;
   font-size: 14px;
@@ -204,12 +264,18 @@ export default {
   margin-left: 60px;
   justify-content:center;
   height: 80px;
+  /*position:absolute;*/
 }
 .infomation-tittle{
+
+  /*margin-top: -36px;*/
+  /*position:absolute;*/
   font-family: SourceHanSansCN;
   font-size: 20px;
 }
 .infomation-subtittle{
+
+  /*position:absolute;*/
   font-family: 江城圆体;
   font-size: 12px;
   color: #bfbfbf;

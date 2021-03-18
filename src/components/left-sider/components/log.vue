@@ -8,6 +8,13 @@
     </el-alert>
     <el-scrollbar style="width: 100%;height: 86%">
     <el-timeline style="margin-top: 8px;margin-left: -28px">
+
+      <el-timeline-item timestamp="2021/03/17" placement="top">
+        <el-card>
+          <h4>v1.0.1</h4>
+          <p>为卡片一增加过滤器，卡片主、副标题超过一定字数自动省略</p>
+        </el-card>
+      </el-timeline-item>
       <el-timeline-item timestamp="2021/03/15" placement="top">
         <el-card>
           <h4>v1.0.0</h4>

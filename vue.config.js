@@ -1,3 +1,3 @@
-module.exports = {
-    publicPath:"/CardPoster",
-}
+// module.exports = {
+//     publicPath:"/CardPoster",
+// }
