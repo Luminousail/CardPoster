@@ -6,6 +6,7 @@
     <Model0 v-if="$store.state.Model==0" class="content" :style="defaultHeight"></Model0>
     <Model1 v-if="$store.state.Model==1" class="content" :style="defaultHeight"></Model1>
     <Model2 v-if="$store.state.Model==2" class="content" :style="defaultHeight"></Model2>
+    <Model3 v-if="$store.state.Model==3" class="content" :style="defaultHeight"></Model3>
     <el-dialog
         title="图片裁剪"
         :visible.sync="$store.state.CropperVisible"
@@ -43,6 +44,7 @@ import CropperImage from "@/components/CropperImage";
 import Model0 from "@/components/model/model0";
 import Model1 from "@/components/model/model1";
 import Model2 from "@/components/model/model2";
+import Model3 from "@/components/model/model3";
 
 
 export default {
@@ -76,6 +78,7 @@ export default {
     Model0,
     Model1,
     Model2,
+    Model3,
     vHeader,
     vsider,
     // vContent,

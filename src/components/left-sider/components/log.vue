@@ -7,8 +7,13 @@
         :closable="false">
     </el-alert>
     <el-scrollbar style="width: 100%;height: 86%">
-    <el-timeline style="margin-top: 8px;margin-left: -28px">
-
+    <el-timeline style="margin-top: 8px;margin-left: 12px">
+      <el-timeline-item timestamp="2021/03/25" placement="top">
+        <el-card>
+          <h4>v1.1.1</h4>
+          <p>添加第三种卡片样式</p>
+        </el-card>
+      </el-timeline-item>
       <el-timeline-item timestamp="2021/03/17" placement="top">
         <el-card>
           <h4>v1.0.1</h4>

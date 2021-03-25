@@ -10,14 +10,21 @@
 <!--  <img :src="avatar" style="width: 80px;">-->
 
   <div class="abouttext">
+    <br>
     <p>CardPoster是一款轻量级的卡片生成应用。</p>
 
       <p>用户可以将想要保存的数据或者网络地址存储在二维码中，上传自己喜欢的图片，并附上文字，做成专属于用户的卡片。</p>
+    <br>
+    <br>
     <p>欢迎访问作者的个人博客：</p>
-    <p><a href="https://www.blog.luminousail.com/">Luminousail 麓思</a></p>
+    <p style="color: red;font-size: 24px"><a href="https://www.blog.luminousail.com/">Luminousail 麓思</a></p>
+    <br>
+    <br>
     <p>以及作者的公众号：</p>
     <img src="../../../assets/picture/wechat.jpg" style="width: 180px">
 <!--    <p>麓思实验室</p>-->
+    <br>
+    <br>
     <p>作者将会第一时间公布最新开发的应用与信息。</p>
     <p>如果您觉得我的应用对您有所帮助，也非常欢迎进行捐助，您的认可就是我最大的动力。</p>
 

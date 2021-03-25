@@ -4,7 +4,7 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 const state = {
-    Model:0,
+    Model:3,
     CropperVisible : false,
     uploadImage:"",
     count: 0,
@@ -16,6 +16,7 @@ const state = {
         cardsubtittle:"",
         infotittle:"麓思实验室",
         infosubtittle:"技术让生活更有趣",
+
     }
 }
 const mutations = {

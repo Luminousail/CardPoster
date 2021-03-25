@@ -9,7 +9,7 @@
   <el-row style="margin-left: 0px">
     <el-col :span="12" v-for="(item , index) in cardList" :key="index">
       <div class="grid-content bg-purple imgborder" >
-        <img class="cardItem" @click="handleSetCard(item.model)" :src="item.img">
+        <img class="cardItem" @click="handleSetCard(item.model,item.cardimg)" :src="item.img">
 <!--        <h3>{{$store.state.count}}</h3>-->
 
       </div>
@@ -26,8 +26,9 @@ export default {
   data(){
     return{
       cardList:[
-        {img:require("../../../assets/model/model1.jpg"),model:1},
-        {img:require("../../../assets/model/model2.png"),model:2},
+        {img:require("../../../assets/model/model1.jpg"),model:1,cardimg:require("../../../assets/cover/cover1.jpg")},
+        {img:require("../../../assets/model/model2.png"),model:2,cardimg:require("../../../assets/cover/cover1.jpg")},
+        {img:require("../../../assets/model/model3.png"),model:3,cardimg:require("../../../assets/cover/cover3.jpg")},
         // {img:require("../../../assets/test/2.jpg")},
         // {img:require("../../../assets/test/3.jpg")},
         // {img:require("../../../assets/test/4.jpg")},
@@ -40,9 +41,10 @@ export default {
       this.$router.push(path);
     },
 
-    handleSetCard(model){
+    handleSetCard(model,cardimg){
       // this.$store.commit('mutationsSetBackground',img);
       this.$store.commit('SetCardModel',model);
+      this.$store.commit('mutationsSetBackground',cardimg);
 
 
     },
